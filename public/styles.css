@@ -3,3 +3,9 @@ body {
   text-align: center;
   font-family: sans-serif;
 }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0px 40px;
+}
