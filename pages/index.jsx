@@ -1,16 +1,14 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/styles.css"/>
       </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>Gyphy Search App</h1>
-      </main>
+      <h1>Gyphy Search App</h1>
     </div>
     
   )
