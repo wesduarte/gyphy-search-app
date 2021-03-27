@@ -45,7 +45,7 @@ export default function Home(initialData) {
       <div className="giphy-search-results-grid">
         {searchResults.map((each, index) => {
           return(
-            <div key={index}>
+            <div key={index} className="giphy-search-result-item">
               <h3>{each.title}</h3>
               <img src={each.images.original.url} alt={each.title}/>
             </div>
