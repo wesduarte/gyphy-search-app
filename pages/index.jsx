@@ -1,7 +1,19 @@
 import Head from 'next/head'
 import { useGiphySearch } from './useGiphySearch';
+import { useState } from 'react';
 
 export default function Home(initialData) {
+
+  const [formInputs, setFormInputs] = useState({})
+
+  const handleInputs = (event) => {
+    const { name, value } = event.target;
+    setFormInputs({ ...formInputs, [name]: value });
+  }
+
+  const search = (event) => {
+    event.preventDefault()
+  }
 
   return (
     <div className='container'>
@@ -12,10 +24,15 @@ export default function Home(initialData) {
       </Head>
       <h1>Gyphy Search App</h1>
 
-      <div class="giphy-search-results-grid">
+      <form onSubmit={search}>
+        <input name="searchTerm" onChange={handleInputs} type="text" required />
+        <button>Search</button>
+      </form>
+
+      <div className="giphy-search-results-grid">
         {initialData.catGifs.data.map((each, index) => {
           return(
-            <div key="index">
+            <div key={index}>
               <h3>{each.title}</h3>
               <img src={each.images.original.url} alt={each.title}/>
             </div>
@@ -23,7 +40,6 @@ export default function Home(initialData) {
         })}
       </div>
     </div>
-    
   )
 }
 
