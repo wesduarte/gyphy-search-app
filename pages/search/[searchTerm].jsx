@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useGiphySearch } from '../useGiphySearch'
 import GifsGrid from '../components/gifs/gifsGrid'
@@ -13,6 +14,7 @@ export default function Search(initialData) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/styles.css" />
       </Head>
+      <p>Go <Link href="/"><a>home</a></Link></p>
       <h1>Search results for: {router.query.searchTerm}</h1>
 
       <GifsGrid gifsResults={initialData.gifs.data} />
