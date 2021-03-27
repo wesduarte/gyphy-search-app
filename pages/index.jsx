@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import { useGiphySearch } from './useGiphySearch';
-import { useEffect, useState } from 'react';
+import { useGiphySearch } from './useGiphySearch'
+import { useEffect, useState } from 'react'
+import GifsGrid from './components/gifs/gifsGrid'
 
 export default function Home(initialData) {
 
@@ -42,16 +43,7 @@ export default function Home(initialData) {
 
       <h1>Search results for: {searchTerm}</h1>
 
-      <div className="giphy-search-results-grid">
-        {searchResults.map((each, index) => {
-          return(
-            <div key={index} className="giphy-search-result-item">
-              <h3>{each.title}</h3>
-              <img src={each.images.original.url} alt={each.title}/>
-            </div>
-          )
-        })}
-      </div>
+      <GifsGrid gifsResults={searchResults} />
     </div>
   )
 }
