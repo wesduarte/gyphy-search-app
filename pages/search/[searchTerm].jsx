@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useGiphySearch } from '../useGiphySearch'
-import GifsGrid from '../components/gifs/gifsGrid'
+import GifsGrid from '../../components/gifs/gifsGrid'
 
 export default function Search(initialData) {
 

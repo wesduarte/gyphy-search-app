@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useGiphySearch } from './useGiphySearch'
 import { useEffect, useState } from 'react'
-import GifsGrid from './components/gifs/gifsGrid'
+import GifsGrid from '../components/gifs/gifsGrid'
 
 export default function Home(initialData) {
 
