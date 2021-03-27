@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useGiphySearch } from '../useGiphySearch'
 import GifsGrid from '../../components/gifs/gifsGrid'
+import Footer from '../../components/footer'
 
 export default function Search(initialData) {
 
@@ -18,6 +19,7 @@ export default function Search(initialData) {
       <h1>Search results for: {router.query.searchTerm}</h1>
 
       <GifsGrid gifsResults={initialData.gifs.data} />
+      <Footer />
     </>
   )
 }

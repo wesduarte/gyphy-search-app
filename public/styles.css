@@ -50,3 +50,10 @@ input {
 input:focus {
   outline: 0px;
 }
+
+.footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  background-color: #EFEFEF;
+  margin-top: 40px;
+}
