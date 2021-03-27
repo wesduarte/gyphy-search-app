@@ -1,19 +1,30 @@
 import Head from 'next/head'
 import { useGiphySearch } from './useGiphySearch';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home(initialData) {
 
   const [formInputs, setFormInputs] = useState({})
+  const [searchResults, setSearchResults] = useState([])
+  const [searchTerm, setSearchTerm] = useState('cats')
 
   const handleInputs = (event) => {
     const { name, value } = event.target;
     setFormInputs({ ...formInputs, [name]: value });
   }
 
-  const search = (event) => {
+  const search = async (event) => {
     event.preventDefault()
+    const searchTerm = formInputs.searchTerm
+    const response = await useGiphySearch().getGifs(searchTerm)
+    const gifs = await response.json()
+    setSearchResults(gifs.data)
+    setSearchTerm(searchTerm)
   }
+
+  useEffect(()=>{
+    setSearchResults(initialData.catGifs.data)
+  }, [initialData])
 
   return (
     <div className='container'>
@@ -29,8 +40,10 @@ export default function Home(initialData) {
         <button>Search</button>
       </form>
 
+      <h1>Search results for: {searchTerm}</h1>
+
       <div className="giphy-search-results-grid">
-        {initialData.catGifs.data.map((each, index) => {
+        {searchResults.map((each, index) => {
           return(
             <div key={index}>
               <h3>{each.title}</h3>
