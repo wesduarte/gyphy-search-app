@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useGiphySearch } from './useGiphySearch'
 import { useEffect, useState } from 'react'
 import GifsGrid from './components/gifs/gifsGrid'
@@ -42,6 +43,10 @@ export default function Home(initialData) {
       </form>
 
       <h1>Search results for: {searchTerm}</h1>
+
+      <Link href="/search/[pid]" as={`/search/${searchTerm}`}>
+        <a>Share this search with others</a>
+      </Link>
 
       <GifsGrid gifsResults={searchResults} />
     </div>
