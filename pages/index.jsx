@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useGiphySearch } from './useGiphySearch'
+import { useGiphySearch } from '../hooks/search/useGiphySearch'
 import { useEffect, useState } from 'react'
 import GifsGrid from '../components/gifs/gifsGrid'
 import Footer from '../components/footer'

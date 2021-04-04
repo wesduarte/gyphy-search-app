@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useGiphySearch } from '../useGiphySearch'
+import { useGiphySearch } from '../../hooks/search/useGiphySearch'
 import GifsGrid from '../../components/gifs/gifsGrid'
 import Footer from '../../components/footer'
 
