@@ -33,7 +33,8 @@ export default function Home(initialData) {
     <>
       <div className='container'>
         <Head>
-          <title>Create Next App</title>
+          <title>Gyphy Search App</title>
+          <meta name="description" content="This is a website based on giphy.com, using the original giphy's API"></meta>
           <link rel="icon" href="/favicon.ico" />
           <link rel="stylesheet" href="/styles.css"/>
         </Head>
