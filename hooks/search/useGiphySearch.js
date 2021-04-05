@@ -1,4 +1,4 @@
-const giphyApiToken = process.env.GIPHY_API_TOKEN;
+const giphyApiToken = process.env.NEXT_PUBLIC_GIPHY_API_TOKEN;
 
 export function useGiphySearch() {
   const getGifs = async (name) => {
